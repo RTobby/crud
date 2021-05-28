@@ -8,7 +8,7 @@ class Table extends React.Component {
         this.state = {
             editable: false,
             name:this.props.name,
-            secondName: this.props.secondName,
+            age: this.props.age,
         }
     }
 
@@ -21,7 +21,7 @@ class Table extends React.Component {
         };
 
         save = () => {
-            this.props.update(this.state.name, this.state.secondName, this.props.index)
+            this.props.update(this.state.name, this.state.age, this.props.index)
             this.setState({ editable: false });
         };
 
@@ -31,7 +31,7 @@ class Table extends React.Component {
                     <th> <input className="posts-form__input" ref="newName" defaultValue={this.props.name} 
                     onChange={ev=>{this.setState({name:ev.target.value})}}/> </th>
                     <th>  <input className="posts-form__input" ref="newSecondName" defaultValue={this.props.id} 
-                     onChange={ev=>{this.setState({secondName:ev.target.value})}}/> </th>
+                     onChange={ev=>{this.setState({age:ev.target.value})}}/> </th>
                     <th>
                         <button className="" onClick={this.save} >
                             Save
@@ -46,7 +46,7 @@ class Table extends React.Component {
             return (
                 <tr className="row">
                     <th> <input className="posts-form__input" defaultValue={this.props.name} disabled='disabled' /> </th>
-                    <th> <input className="posts-form__input" defaultValue={this.props.secondName} disabled='disabled' /> </th>
+                    <th> <input className="posts-form__input" defaultValue={this.props.age} disabled='disabled' /> </th>
                     <th>
                         <div className="buttons">
                             <button onClick={this.edit}>

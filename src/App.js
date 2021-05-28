@@ -43,11 +43,11 @@ class App extends Component {
       .then(response => response.json())
   };
 
-  updateRowContent = (name, secondName, i) => {
+  updateRowContent = (name, age, i) => {
     let data = {
       data: {
         name: name,
-        secondName: secondName,
+        age: age,
       }
     };
 
@@ -66,7 +66,7 @@ class App extends Component {
   setRow = (item) => {
     return (
       <div>
-        <Table key={item._id} index={item._id} name={item.data.name} secondName={item.data.secondName} update={this.updateRowContent} remove={this.deleteRow} />
+        <Table key={item._id} index={item._id} name={item.data.name} age={item.data.age} update={this.updateRowContent} remove={this.deleteRow} />
       </div>
     );
   };
